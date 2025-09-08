@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticker Release + Funko Pop Giveaway</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Main Hero (Branding) */
+    header {
+      background: url('brand.png') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4); /* dark overlay for text */
+      z-index: 1;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.5em;
+      margin-top: 10px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Product Section */
+    .product-hero {
+      text-align: center;
+      margin: 40px auto;
+      position: relative;
+    }
+
+    .product-hero img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-hero img:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+    }
+
+    .product-cta {
+      margin-top: 20px;
+    }
+
+    .product-cta a {
+      background: linear-gradient(45deg, #ff6600, #ff3300);
+      color: white;
+      text-decoration: none;
+      padding: 15px 35px;
+      font-size: 1.2em;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .product-cta a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    /* Section Divider */
+    .section-divider {
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(to right, #ffcc00, #ff9900);
+      clip-path: polygon(0 0, 100% 100%, 100% 0, 0 0);
+      margin-bottom: 30px;
+    }
+
+    /* Giveaway Prize */
+    .prize {
+      position: relative;
+      background-color: #fff8e6;
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .prize img {
+      max-width: 90%;
+      max-height: 500px;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    .prize img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Top Prize Badge */
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #ff3300;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 0.9em;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* Sparkle animation */
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: yellow;
+      border-radius: 50%;
+      animation: sparkle 1.5s infinite;
+    }
+    @keyframes sparkle {
+      0% { opacity: 0; transform: translate(0,0) scale(0.5); }
+      50% { opacity: 1; }
+      100% { opacity: 0; transform: translate(20px, -20px) scale(1); }
+    }
+
+    /* Countdown & Sticker Counter */
+    .counter, .countdown {
+      display: block;
+      max-width: 300px;
+      margin: 10px auto;
+      background: #ffcc00;
+      color: #333;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 25px;
+      text-align: center;
+      animation: pulse 1.5s infinite;
+      font-size: 1.2em;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Sections */
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'Bangers', cursive;
+      font-size: 2em;
+      color: #ff6600;
+    }
+    ul { list-style: none; padding: 0; }
+    ul li { margin-bottom: 10px; font-size: 1.1em; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #333;
+      color: white;
+    }
+    footer a { color: #ffcc00; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Main Branding Hero -->
+  <header>
+    <h1>Limited Sticker Release</h1>
+    <p>Buy a sticker and enter to win 1 of 10 Funko Pops! (~10% chance to win)</p>
+  </header>
+
+  <!-- Product Image + CTA -->
+  <section class="product-hero">
+    <img src="zombie_hogan.png" alt="Sticker Design">
+    <div class="product-cta">
+      <a href="PAYMENT_OR_FORM_LINK" target="_blank">Buy Sticker / Enter Giveaway</a>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Giveaway Prize -->
+  <section class="prize">
+    <h2>Giveaway Prize</h2>
+    <p>10 Funko Pops will be shipped to winners in one lot!</p>
+    <div style="position: relative; display: inline-block;">
+      <img src="giveaway.jpg" alt="10 Funko Pops">
+      <div class="badge">Top Prize!</div>
+      <div class="sparkle" style="top:5%; left:25%;"></div>
+      <div class="sparkle" style="top:15%; left:70%; animation-delay:0.3s;"></div>
+      <div class="sparkle" style="top:40%; left:50%; animation-delay:0.6s;"></div>
+    </div>
+  </section>
+
+  <!-- Countdown & Sticker Remaining -->
+  <div class="counter">
+    Stickers Remaining: <span id="stickersRemaining">100</span>
+  </div>
+  <div class="countdown">
+    Giveaway Ends In: <span id="countdownTimer"></span>
+  </div>
+
+  <!-- Sticker Details -->
+  <section>
+    <h2>Sticker Details</h2>
+    <ul>
+      <li>Size: 4x4 Vinyl Matte</li>
+      <li>High-quality print</li>
+      <li>Price: $10</li>
+      <li>Estimated Shipping: ESTIMATED_DELIVERY</li>
+      <li>Limited to 100 stickers for this round!</li>
+    </ul>
+  </section>
+
+  <!-- How It Works -->
+  <section>
+    <h2>How It Works</h2>
+    <ul>
+      <li>Buy a sticker to automatically enter the giveaway.</li>
+      <li>Each purchase counts as one entry.</li>
+      <li>10 winners will be randomly selected after the giveaway ends.</li>
+      <li>All winners will be contacted via email and the 10 Funko Pops shipped at once.</li>
+    </ul>
+  </section>
+
+  <!-- Social / Share -->
+  <section>
+    <h2>Share the Hype!</h2>
+    <p>Share with your friends so they don’t miss out:</p>
+    <div style="text-align:center;">
+      <a href="https://twitter.com/intent/tweet?text=Check+out+this+sticker+giveaway!+LINK" target="_blank">Twitter</a> |
+      <a href="https://www.facebook.com/sharer/sharer.php?u=LINK" target="_blank">Facebook</a> |
+      <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Contact: <a href="mailto:YOU@EMAIL.COM">YOU@EMAIL.COM</a></p>
+    <p>
+      <a href="terms.html">Terms of Service & Policies</a>
+    </p>
+  </footer>
+
+  <!-- JavaScript: Countdown & Sticker Counter -->
+  <script>
+    // Countdown Timer
+    const giveawayEnd = new Date("2025-09-30T23:59:59").getTime();
+    const countdownElem = document.getElementById("countdownTimer");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = giveawayEnd - now;
+
+      if (distance < 0) {
+        countdownElem.innerHTML = "Giveaway Ended!";
+        clearInterval(countdownInterval);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000*60*60*24));
+      const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+      const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+      const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+      countdownElem.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Sticker Counter
+    let stickersRemaining = 100;
+    const stickersElem = document.getElementById("stickersRemaining");
+
+    function decrementSticker() {
+      if (stickersRemaining > 0) {
+        stickersRemaining--;
+        stickersElem.innerText = stickersRemaining;
+      }
+    }
+  </script>
+
+</body>
+</html>
