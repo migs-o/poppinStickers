@@ -20,9 +20,12 @@
     /* Main Hero (Branding) */
     header {
       background: url('brand.png') center center no-repeat;
-      background-size: contain; /* show the full image */
-      height: 400px; /* visible height */
+      background-size: cover; /* fills header width */
+      height: 400px; /* adjust height as needed */
       width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     /* Responsive hero height for smaller screens */
@@ -30,6 +33,15 @@
       header {
         height: 250px;
       }
+    }
+
+    /* Hero Divider / Spacer */
+    .hero-divider {
+      width: 100%;
+      height: 60px; /* adjust spacing */
+      background: linear-gradient(to right, #ffcc00, #ff9900);
+      margin: 40px 0;
+      clip-path: polygon(0 0, 100% 100%, 100% 0, 0 0);
     }
 
     /* Product Section */
@@ -206,6 +218,9 @@
 
   <!-- Main Branding Hero -->
   <header></header>
+
+  <!-- Hero Divider / Spacer -->
+  <div class="hero-divider"></div>
 
   <!-- Product Section with Text + CTA -->
   <section class="product-hero">
