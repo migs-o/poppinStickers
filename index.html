@@ -9,7 +9,20 @@
     header { background-color: #ffcc00; padding: 40px 20px; text-align: center; }
     header h1 { margin: 0; font-size: 2.5em; }
     header p { font-size: 1.2em; margin-top: 10px; }
-    .hero, .prize img { max-width: 300px; margin: 20px auto; display: block; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+    
+    /* Hero and Prize Images */
+    .hero img, .prize img {
+      max-width: 90%;       /* scales to fit screen width */
+      max-height: 600px;    /* limits vertical size */
+      width: auto;          /* maintains aspect ratio */
+      height: auto;         /* maintains aspect ratio */
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      object-fit: contain;  /* ensures full image is visible */
+    }
+
     .cta { text-align: center; margin: 20px; }
     .cta a { background-color: #ff6600; color: white; text-decoration: none; padding: 15px 30px; font-size: 1.2em; border-radius: 8px; transition: 0.3s; }
     .cta a:hover { background-color: #e55b00; }
@@ -39,7 +52,7 @@
   <section class="prize">
     <h2>Giveaway Prize</h2>
     <p>10 Funko Pops will be shipped to winners in one lot!</p>
-    <img src="FUNKO_LOT_IMAGE_URL" alt="10 Funko Pops" style="max-width:100%; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2); margin-top:20px;">
+    <img src="FUNKO_LOT_IMAGE_URL" alt="10 Funko Pops">
   </section>
 
   <!-- Countdown & Sticker Limit -->
