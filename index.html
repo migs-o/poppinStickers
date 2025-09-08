@@ -40,8 +40,8 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Hero & Prize Images */
-    .hero img, .prize img {
+    /* Hero Image */
+    .hero img {
       max-width: 90%;
       max-height: 600px;
       width: auto;
@@ -53,8 +53,75 @@
       object-fit: contain;
       transition: transform 0.3s ease;
     }
-    .hero img:hover, .prize img:hover {
+    .hero img:hover {
       transform: scale(1.05);
+    }
+
+    /* Section Divider */
+    .section-divider {
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(to right, #ffcc00, #ff9900);
+      clip-path: polygon(0 0, 100% 100%, 100% 0, 0 0);
+      margin-bottom: 30px;
+    }
+
+    /* Prize Card */
+    .prize {
+      position: relative;
+      background-color: #fff8e6;
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .prize img {
+      max-width: 90%;
+      max-height: 500px;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    .prize img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Top Prize Badge */
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #ff3300;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 0.9em;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* Sparkle animation */
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: yellow;
+      border-radius: 50%;
+      animation: sparkle 1.5s infinite;
+    }
+    @keyframes sparkle {
+      0% { opacity: 0; transform: translate(0,0) scale(0.5); }
+      50% { opacity: 1; }
+      100% { opacity: 0; transform: translate(20px, -20px) scale(1); }
     }
 
     /* CTA Button */
@@ -72,10 +139,20 @@
       box-shadow: 0 6px 12px rgba(0,0,0,0.2);
       transition: all 0.3s;
       display: inline-block;
+      position: relative;
     }
     .cta a:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    .cta a::after {
+      content: " ➔";
+      display: inline-block;
+      animation: arrowBounce 1s infinite;
+    }
+    @keyframes arrowBounce {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(5px); }
     }
 
     /* Sections */
@@ -93,16 +170,6 @@
     }
     ul { list-style: none; padding: 0; }
     ul li { margin-bottom: 10px; font-size: 1.1em; }
-
-    /* Prize Card */
-    .prize {
-      background-color: #fff8e6;
-      padding: 30px 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      text-align: center;
-      margin-bottom: 30px;
-    }
 
     /* Countdown & Sticker Counter */
     .counter, .countdown {
@@ -142,16 +209,25 @@
     <p>Buy a sticker and enter to win 1 of 10 Funko Pops! (~10% chance to win)</p>
   </header>
 
-  <!-- Sticker Image -->
+  <!-- Hero Image -->
   <div class="hero">
     <img src="zombie_hogan.png" alt="Sticker Design">
   </div>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
 
   <!-- Giveaway Prize -->
   <section class="prize">
     <h2>Giveaway Prize</h2>
     <p>10 Funko Pops will be shipped to winners in one lot!</p>
-    <img src="FUNKO_LOT_IMAGE_URL" alt="10 Funko Pops">
+    <div style="position: relative; display: inline-block;">
+      <img src="giveaway.jpg" alt="10 Funko Pops">
+      <div class="badge">Top Prize!</div>
+      <div class="sparkle" style="top:5%; left:25%;"></div>
+      <div class="sparkle" style="top:15%; left:70%; animation-delay:0.3s;"></div>
+      <div class="sparkle" style="top:40%; left:50%; animation-delay:0.6s;"></div>
+    </div>
   </section>
 
   <!-- Countdown & Sticker Remaining -->
@@ -234,18 +310,16 @@
     const countdownInterval = setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Sticker Counter (manual update or integrate with form/payments backend)
+    // Sticker Counter
     let stickersRemaining = 100;
     const stickersElem = document.getElementById("stickersRemaining");
 
-    // Example manual decrement function
     function decrementSticker() {
       if (stickersRemaining > 0) {
         stickersRemaining--;
         stickersElem.innerText = stickersRemaining;
       }
     }
-    // Call decrementSticker() after each confirmed purchase
   </script>
 
 </body>
