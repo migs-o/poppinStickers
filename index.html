@@ -21,7 +21,15 @@
     header {
       background: url('branding_hero.png') center center no-repeat;
       background-size: contain; /* show the full image */
-      height: 400px; /* adjust as needed */
+      height: 400px; /* visible height */
+      width: 100%;
+    }
+
+    /* Responsive hero height for smaller screens */
+    @media (max-width: 600px) {
+      header {
+        height: 250px;
+      }
     }
 
     /* Product Section */
