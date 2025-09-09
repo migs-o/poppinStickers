@@ -4,240 +4,243 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sticker Release + Funko Pop Giveaway</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-<style>
-  /* Global Styles */
-  body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-  }
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-  /* Main Hero (Branding) */
-  header {
-    background: #ffe680 url('brand.png') center center no-repeat;
-    background-size: contain;
-    height: 500px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  @media (max-width: 600px) {
-    header {
-      height: 300px;
-    }
-  }
-
-  /* Hero Divider / Spacer */
-  .hero-divider, .section-divider {
-    width: 100%;
-    background: linear-gradient(to right, #ffcc00, #ff9900);
-    clip-path: polygon(0 0, 100% 100%, 100% 0, 0 0);
-  }
-  .hero-divider { height: 60px; margin: 40px 0; }
-  .section-divider { height: 50px; margin-bottom: 30px; }
-
-  /* Product Section */
-  .product-hero {
-    text-align: center;
-    margin: 40px auto;
-    position: relative;
-  }
-  .product-hero h1 {
-    font-family: 'Bangers', cursive;
-    font-size: 2.5em;
-    color: #ff6600;
-    margin-bottom: 10px;
-  }
-  .product-hero p { font-size: 1.2em; color: #333; margin-bottom: 20px; }
-  .product-hero img {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .product-hero img:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
-  }
-  .product-cta { margin-top: 20px; }
-  .product-cta a {
-    background: linear-gradient(45deg, #ff6600, #ff3300);
-    color: white;
-    text-decoration: none;
-    padding: 15px 35px;
-    font-size: 1.2em;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-    transition: all 0.3s;
-    display: inline-block;
-  }
-  .product-cta a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-  }
-
-  /* Giveaway Prize */
-  .prize {
-    position: relative;
-    background-color: #fff8e6;
-    padding: 30px 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .prize img {
-    max-width: 90%;
-    max-height: 500px;
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    object-fit: contain;
-    transition: transform 0.3s ease;
-  }
-  .prize img:hover { transform: scale(1.05); }
-
-  /* Top Prize Badge */
-  .badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #ff3300;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 0.9em;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-    animation: bounce 2s infinite;
-  }
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-  }
-
-  /* Sparkle animation */
-  .sparkle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: yellow;
-    border-radius: 50%;
-    animation: sparkle 1.5s infinite;
-  }
-  @keyframes sparkle {
-    0% { opacity: 0; transform: translate(0,0) scale(0.5); }
-    50% { opacity: 1; }
-    100% { opacity: 0; transform: translate(20px, -20px) scale(1); }
-  }
-
-  /* Countdown & Sticker Counter */
-  .counter, .countdown {
-    display: block;
-    max-width: 300px;
-    margin: 10px auto;
-    background: #ffcc00;
-    color: #333;
-    font-weight: bold;
-    padding: 12px 20px;
-    border-radius: 25px;
-    text-align: center;
-    animation: pulse 1.5s infinite;
-    font-size: 1.2em;
-  }
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-  }
-
-  /* Sections */
-  section {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Bangers', cursive;
-    font-size: 2em;
-    color: #ff6600;
-  }
-  ul { list-style: none; padding: 0; }
-  ul li { margin-bottom: 10px; font-size: 1.1em; }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 25px;
-    background-color: #333;
-    color: white;
-  }
-  footer a {
-    color: #ffcc00;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-  }
-  footer a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 6px #ffcc00;
-  }
-
-  /* Social Links */
-  .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-  }
-  .social-links a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #fff;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-    font-size: 1em;
-  }
-  /* Brand Colors */
-  .social-links a.twitter { background: #1DA1F2; }
-  .social-links a.facebook { background: #1877F2; }
-  .social-links a.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-  /* Hover Effects */
-  .social-links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-
-  /* Mobile: icon-only social buttons */
-  @media (max-width: 500px) {
-    .social-links a span { display: none; }
-    .social-links a {
-      width: 44px;
-      height: 44px;
-      justify-content: center;
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
       padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Main Hero (Branding) */
+    header {
+      background: #ffe680 url('brand.png') center center no-repeat;
+      background-size: contain;
+      height: 500px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    @media (max-width: 600px) {
+      header {
+        height: 300px;
+      }
+    }
+
+    /* Hero Divider / Spacer */
+    .hero-divider, .section-divider {
+      width: 100%;
+      background: linear-gradient(to right, #ffcc00, #ff9900);
+      clip-path: polygon(0 0, 100% 100%, 100% 0, 0 0);
+    }
+    .hero-divider { height: 60px; margin: 40px 0; }
+    .section-divider { height: 50px; margin-bottom: 30px; }
+
+    /* Product Section */
+    .product-hero {
+      text-align: center;
+      margin: 40px auto;
+      position: relative;
+    }
+    .product-hero h1 {
+      font-family: 'Bangers', cursive;
+      font-size: 2.5em;
+      color: #ff6600;
+      margin-bottom: 10px;
+    }
+    .product-hero p { font-size: 1.2em; color: #333; margin-bottom: 20px; }
+    .product-hero img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-hero img:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+    }
+    .product-cta { margin-top: 20px; }
+    .product-cta a {
+      background: linear-gradient(45deg, #ff6600, #ff3300);
+      color: white;
+      text-decoration: none;
+      padding: 15px 35px;
+      font-size: 1.2em;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    .product-cta a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    /* Giveaway Prize */
+    .prize {
+      position: relative;
+      background-color: #fff8e6;
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .prize img {
+      max-width: 90%;
+      max-height: 500px;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    .prize img:hover { transform: scale(1.05); }
+
+    /* Top Prize Badge */
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #ff3300;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 0.9em;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* Sparkle animation */
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: yellow;
       border-radius: 50%;
+      animation: sparkle 1.5s infinite;
+    }
+    @keyframes sparkle {
+      0% { opacity: 0; transform: translate(0,0) scale(0.5); }
+      50% { opacity: 1; }
+      100% { opacity: 0; transform: translate(20px, -20px) scale(1); }
+    }
+
+    /* Countdown & Sticker Counter */
+    .counter, .countdown {
+      display: block;
+      max-width: 300px;
+      margin: 10px auto;
+      background: #ffcc00;
+      color: #333;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 25px;
+      text-align: center;
+      animation: pulse 1.5s infinite;
       font-size: 1.2em;
     }
-  }
-</style>
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Sections */
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'Bangers', cursive;
+      font-size: 2em;
+      color: #ff6600;
+    }
+    ul { list-style: none; padding: 0; }
+    ul li { margin-bottom: 10px; font-size: 1.1em; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #333;
+      color: white;
+    }
+    footer a {
+      color: #ffcc00;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    footer a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 6px #ffcc00;
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      font-size: 1em;
+    }
+    /* Brand Colors */
+    .social-links a.twitter { background: #1DA1F2; }
+    .social-links a.facebook { background: #1877F2; }
+    .social-links a.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    /* Hover Effects */
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Mobile: icon-only social buttons */
+    @media (max-width: 500px) {
+      .social-links a span { display: none; }
+      .social-links a {
+        width: 44px;
+        height: 44px;
+        justify-content: center;
+        padding: 0;
+        border-radius: 50%;
+        font-size: 1.2em;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -308,19 +311,23 @@
   <section>
     <h2>Share the Hype!</h2>
     <p>Share with your friends so they don’t miss out:</p>
-    <div style="text-align:center;">
-      <a href="https://twitter.com/intent/tweet?text=Check+out+this+sticker+giveaway!+LINK" target="_blank">Twitter</a> |
-      <a href="https://www.facebook.com/sharer/sharer.php?u=LINK" target="_blank">Facebook</a> |
-      <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    <div class="social-links">
+      <a class="twitter" href="https://twitter.com/intent/tweet?text=Check+out+this+sticker+giveaway!+LINK" target="_blank">
+        <i class="fab fa-twitter"></i> <span>Twitter</span>
+      </a>
+      <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=LINK" target="_blank">
+        <i class="fab fa-facebook-f"></i> <span>Facebook</span>
+      </a>
+      <a class="instagram" href="https://www.instagram.com/" target="_blank">
+        <i class="fab fa-instagram"></i> <span>Instagram</span>
+      </a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>Contact: <a href="mailto:YOU@EMAIL.COM">YOU@EMAIL.COM</a></p>
-    <p>
-      <a href="terms.html">Terms of Service & Policies</a>
-    </p>
+    <p><a href="terms.html">Terms of Service & Policies</a></p>
   </footer>
 
   <!-- JavaScript: Countdown & Sticker Counter -->
