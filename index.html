@@ -21,7 +21,7 @@
       color: #333;
     }
 
-    /* Main Hero (Branding) */
+    /* Main Hero */
     header {
       background: #ffe680 url('brand.png') center center no-repeat;
       background-size: contain;
@@ -33,6 +33,7 @@
       overflow: hidden;
       position: relative;
     }
+
     @media (max-width: 600px) {
       header { height: 200px; }
     }
@@ -67,7 +68,10 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .product-hero img:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 12px 25px rgba(0,0,0,0.4); }
+    .product-hero img:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+    }
     .product-cta { margin-top: 20px; }
     .product-cta a {
       background: linear-gradient(45deg, #ff6600, #ff3300);
@@ -80,7 +84,10 @@
       transition: all 0.3s;
       display: inline-block;
     }
-    .product-cta a:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
+    .product-cta a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
 
     /* Giveaway Prize */
     .prize {
@@ -103,10 +110,25 @@
       transition: transform 0.3s ease;
     }
     .prize img:hover { transform: scale(1.05); }
-    .badge { position: absolute; top: 10px; left: 10px; background: #ff3300; color: white; padding: 8px 15px; border-radius: 50px; font-weight: bold; font-size: 0.9em; box-shadow: 0 3px 6px rgba(0,0,0,0.2); animation: bounce 2s infinite; }
-    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-    .sparkle { position: absolute; width: 6px; height: 6px; background: yellow; border-radius: 50%; animation: sparkle 1.5s infinite; }
-    @keyframes sparkle { 0% { opacity:0; transform:translate(0,0) scale(0.5); } 50% { opacity:1; } 100% { opacity:0; transform:translate(20px,-20px) scale(1); } }
+
+    /* Top Prize Badge */
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #ff3300;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 0.9em;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
 
     /* Countdown & Sticker Counter */
     .counter, .countdown {
@@ -122,21 +144,53 @@
       animation: pulse 1.5s infinite;
       font-size: 1.2em;
     }
-    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
 
     /* Sections */
-    section { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-    h2 { text-align: center; margin-bottom: 20px; font-family: 'Bangers', cursive; font-size: 2em; color: #ff6600; }
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'Bangers', cursive;
+      font-size: 2em;
+      color: #ff6600;
+    }
     ul { list-style: none; padding: 0; }
     ul li { margin-bottom: 10px; font-size: 1.1em; }
 
     /* Footer */
-    footer { text-align: center; padding: 25px; background-color: #333; color: white; }
-    footer a { color: #ffcc00; font-weight: bold; text-decoration: none; transition: color 0.3s ease, text-shadow 0.3s ease; }
-    footer a:hover { color: #ffffff; text-shadow: 0 0 6px #ffcc00; }
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #333;
+      color: white;
+    }
+    footer a {
+      color: #ffcc00;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    footer a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 6px #ffcc00;
+    }
 
     /* Social Links */
-    .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
     .social-links a {
       display: flex;
       align-items: center;
@@ -149,16 +203,35 @@
       transition: transform 0.2s ease, box-shadow 0.3s ease;
       font-size: 1em;
     }
+    /* Brand Colors */
     .social-links a.twitter { background: #1DA1F2; }
     .social-links a.facebook { background: #1877F2; }
-    .social-links a.instagram { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
-    .social-links a.bluesky { background: #00acee; } /* official Bluesky blue */
-    .social-links a i { color: white; }
-    .social-links a:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    .social-links a.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .social-links a.bluesky { background: #0095FF; } /* Bluesky brand color */
+    /* Hover Effects */
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
 
+    /* Mobile: icon-only social buttons */
     @media (max-width: 500px) {
       .social-links a span { display: none; }
-      .social-links a { width: 44px; height: 44px; justify-content: center; padding: 0; border-radius: 50%; font-size: 1.2em; }
+      .social-links a {
+        width: 44px;
+        height: 44px;
+        justify-content: center;
+        padding: 0;
+        border-radius: 50%;
+        font-size: 1.2em;
+      }
+      /* Center SVG inside Bluesky button */
+      .social-links a.bluesky img {
+        display: block;
+        margin: 0 auto;
+        width: 24px;
+        height: 24px;
+      }
     }
   </style>
 </head>
@@ -180,6 +253,7 @@
     </div>
   </section>
 
+  <!-- Section Divider -->
   <div class="section-divider"></div>
 
   <!-- Giveaway Prize -->
@@ -196,8 +270,12 @@
   </section>
 
   <!-- Countdown & Sticker Remaining -->
-  <div class="counter">Stickers Remaining: <span id="stickersRemaining">100</span></div>
-  <div class="countdown">Giveaway Ends In: <span id="countdownTimer"></span></div>
+  <div class="counter">
+    Stickers Remaining: <span id="stickersRemaining">100</span>
+  </div>
+  <div class="countdown">
+    Giveaway Ends In: <span id="countdownTimer"></span>
+  </div>
 
   <!-- Sticker Details -->
   <section>
@@ -239,10 +317,10 @@
       <a class="instagram" href="https://www.instagram.com/" target="_blank">
         <i class="fab fa-instagram"></i> <span>Instagram</span>
       </a>
-      <a class="bluesky" href="https://bsky.app/profile/getpoppables" target="_blank">
-  <img src="Bluesky_Logo.svg" alt="Bluesky" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
-  <span>Bluesky</span>
-</a>
+      <a class="bluesky" href="https://bsky.app/profile/YOURUSERNAME" target="_blank">
+        <img src="images/bluesky.svg" alt="Bluesky" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
+        <span>Bluesky</span>
+      </a>
     </div>
   </section>
 
@@ -256,28 +334,35 @@
 
   <!-- JavaScript: Countdown & Sticker Counter -->
   <script>
+    // Countdown Timer
     const giveawayEnd = new Date("2025-09-30T23:59:59").getTime();
     const countdownElem = document.getElementById("countdownTimer");
 
     function updateCountdown() {
       const now = new Date().getTime();
       const distance = giveawayEnd - now;
+
       if (distance < 0) {
         countdownElem.innerHTML = "Giveaway Ended!";
         clearInterval(countdownInterval);
         return;
       }
+
       const days = Math.floor(distance / (1000*60*60*24));
       const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
       const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
       const seconds = Math.floor((distance % (1000*60)) / 1000);
+
       countdownElem.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
+
     const countdownInterval = setInterval(updateCountdown, 1000);
     updateCountdown();
 
+    // Sticker Counter
     let stickersRemaining = 100;
     const stickersElem = document.getElementById("stickersRemaining");
+
     function decrementSticker() {
       if (stickersRemaining > 0) {
         stickersRemaining--;
