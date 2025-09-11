@@ -1,0 +1,236 @@
+/* ==========================
+   Global Styles
+========================== */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  text-align: center;
+}
+
+/* ==========================
+   Header
+========================== */
+header {
+  background: linear-gradient(45deg, #ffcc00, #ff6600);
+  padding: 40px 20px;
+  text-align: center;
+}
+header h1 {
+  font-family: 'Bangers', cursive;
+  font-size: 2.5em;
+  color: #fff;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* ==========================
+   Hero / Product Sections
+========================== */
+.product-hero, .product {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff8e6;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.product-hero h1, .product h2 {
+  font-family: 'Bangers', cursive;
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+.product-hero p, .product p {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.product img, .product-hero img, .prize img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product img:hover, .product-hero img:hover, .prize img:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+/* ==========================
+   Buttons
+========================== */
+a.button, .purchase-options a {
+  background: linear-gradient(45deg, #ff6600, #ff3300);
+  color: white;
+  text-decoration: none;
+  padding: 15px 35px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  display: inline-block;
+}
+a.button:hover, .purchase-options a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* ==========================
+   Dividers
+========================== */
+.hero-divider, .section-divider {
+  width: 100%;
+  background: linear-gradient(to right, #ffcc00, #ff9900);
+  clip-path: polygon(0 0, 100% 100%, 100% 0, 0 0);
+}
+.hero-divider { height: 60px; margin: 40px 0; }
+.section-divider { height: 50px; margin-bottom: 30px; }
+
+/* ==========================
+   Giveaway Prize & Badges
+========================== */
+.prize {
+  position: relative;
+  background-color: #fff8e6;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  margin-bottom: 30px;
+}
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff3300;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 0.9em;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Sparkle */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: yellow;
+  border-radius: 50%;
+  animation: sparkle 1.5s infinite;
+}
+@keyframes sparkle {
+  0% { opacity: 0; transform: translate(0,0) scale(0.5); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translate(20px, -20px) scale(1); }
+}
+
+/* ==========================
+   Countdown / Sticker Counter
+========================== */
+.counter, .countdown {
+  display: block;
+  max-width: 300px;
+  margin: 10px auto;
+  background: #ffcc00;
+  color: #333;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-align: center;
+  animation: pulse 1.5s infinite;
+  font-size: 1.2em;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ==========================
+   Sections
+========================== */
+section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+ul { list-style: none; padding: 0; }
+ul li { margin-bottom: 10px; font-size: 1.1em; }
+
+/* ==========================
+   Footer
+========================== */
+footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #333;
+  color: white;
+}
+footer a {
+  color: #ffcc00;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+footer a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 6px #ffcc00;
+}
+
+/* ==========================
+   Social Links
+========================== */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  font-size: 1em;
+}
+.social-links a.twitter { background: #1DA1F2; }
+.social-links a.facebook { background: #1877F2; }
+.social-links a.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.social-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* ==========================
+   Responsive / Mobile
+========================== */
+@media (max-width: 500px) {
+  .social-links a span { display: none; }
+  .social-links a {
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 1.2em;
+  }
+}
