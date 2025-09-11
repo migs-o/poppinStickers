@@ -7,35 +7,24 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="styles.css">
 
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-      color: #333;
-      text-align: center;
-    }
+    /* Local styles unique to this page */
+    body { text-align: center; }
 
     header {
       background: linear-gradient(45deg, #ffcc00, #ff6600);
       padding: 40px 20px;
-      text-align: center;
     }
+
     header h1 {
-      font-family: 'Bangers', cursive;
       font-size: 3em;
       color: #fff;
       margin: 0;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    }
-
-    h2 {
-      font-family: 'Bangers', cursive;
-      font-size: 2em;
-      color: #ff6600;
-      margin-bottom: 20px;
     }
 
     .product {
@@ -55,64 +44,26 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .product img:hover {
       transform: translateY(-5px) scale(1.05);
       box-shadow: 0 12px 25px rgba(0,0,0,0.4);
     }
 
     .purchase-options {
-      margin: 2rem 0;
       display: grid;
       gap: 1rem;
       max-width: 300px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .purchase-options a,
-    .back-home a {
-      background: linear-gradient(45deg, #ff6600, #ff3300);
-      color: white;
-      text-decoration: none;
-      padding: 15px 35px;
-      font-size: 1.1em;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-      transition: all 0.3s;
-      display: block;
-    }
-    .purchase-options a:hover,
-    .back-home a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      margin: 2rem auto;
     }
 
     .back-home {
       margin-top: 20px;
     }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background-color: #333;
-      color: white;
-      margin-top: 40px;
-    }
-    footer a {
-      color: #ffcc00;
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-    footer a:hover {
-      color: #ffffff;
-      text-shadow: 0 0 6px #ffcc00;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Header with Text -->
   <header>
     <h1>Get Your Stickers!</h1>
   </header>
@@ -123,27 +74,18 @@
       <img src="zombie_hogan.png" alt="Custom Sticker">
       <p>High-quality vinyl sticker. Waterproof, durable, and perfect for laptops, bottles, or notebooks.</p>
 
-<div class="options">
-  <a href="https://buy.stripe.com/test_00waEW2O344vdch7qkgrS00" target="_blank">
-    <button class="btn-1">Buy 1 Sticker – $10</button>
-  </a>
-  <a href="https://buy.stripe.com/test_14A6oGgET58z6NT260grS01" target="_blank">
-    <button class="btn-3">Buy 3 Stickers – $25 ($8.33 each)</button>
-  </a>
-  <a href="https://buy.stripe.com/test_5kQ00idsH44v3BH5icgrS02" target="_blank">
-    <button class="btn-5">Buy 5 Stickers – $40 ($8 each)</button>
-  </a>
-</div>
+      <div class="purchase-options">
+        <a class="button" href="https://buy.stripe.com/test_00waEW2O344vdch7qkgrS00" target="_blank">Buy 1 Sticker – $10</a>
+        <a class="button" href="https://buy.stripe.com/test_14A6oGgET58z6NT260grS01" target="_blank">Buy 3 Stickers</a>
+        <a class="button" href="https://buy.stripe.com/test_5kQ00idsH44v3BH5icgrS02" target="_blank">Buy 5 Stickers</a>
+      </div>
 
-
-      <!-- Back to Homepage -->
       <div class="back-home">
         <a href="index.html">&larr; Back to Home</a>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>Contact: <a href="mailto:hello@getpoppables">hello@getpoppables.com</a></p>
     <p><a href="terms.html">Terms of Service & Policies</a> | <a href="rules.html">Giveaway Rules</a></p>
