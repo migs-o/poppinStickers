@@ -55,11 +55,17 @@
     }
     .product-hero h1 {
       font-family: 'Bangers', cursive;
-      font-size: 2.5em;
+      font-size: 2.8em;
       color: #ff6600;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      animation: pulseColor 2s infinite;
+    }
+    @keyframes pulseColor {
+      0%, 100% { color: #ff6600; }
+      50% { color: #ff3300; }
     }
     .product-hero p { font-size: 1.2em; color: #333; margin-bottom: 20px; }
+
     .product-hero img {
       max-width: 300px;
       width: 100%;
@@ -72,21 +78,38 @@
       transform: translateY(-5px) scale(1.05);
       box-shadow: 0 12px 25px rgba(0,0,0,0.4);
     }
+
+    /* CTA Button */
     .product-cta { margin-top: 20px; }
     .product-cta a {
+      padding: 18px 40px;
+      font-size: 1.4em;
+      border-radius: 10px;
       background: linear-gradient(45deg, #ff6600, #ff3300);
       color: white;
       text-decoration: none;
-      padding: 15px 35px;
-      font-size: 1.2em;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-      transition: all 0.3s;
+      box-shadow: 0 6px 20px rgba(255,102,0,0.5);
+      transition: all 0.3s ease-in-out;
       display: inline-block;
     }
     .product-cta a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(255,102,0,0.7);
+    }
+
+    /* Badge Animation */
+    .product-hero .badge {
+      position: absolute;
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      animation: bounceBadge 1.5s infinite;
+      pointer-events: none; /* clicks pass through */
+    }
+    @keyframes bounceBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
     /* Giveaway Prize */
@@ -110,8 +133,6 @@
       transition: transform 0.3s ease;
     }
     .prize img:hover { transform: scale(1.05); }
-
-    /* Top Prize Badge */
     .badge {
       position: absolute;
       top: 10px;
@@ -203,35 +224,20 @@
       transition: transform 0.2s ease, box-shadow 0.3s ease;
       font-size: 1em;
     }
-    /* Brand Colors */
     .social-links a.twitter { background: #1DA1F2; }
     .social-links a.facebook { background: #1877F2; }
     .social-links a.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-    .social-links a.bluesky { background: #0095FF; } /* Bluesky brand color */
-    /* Hover Effects */
+    .social-links a.bluesky { background: #0095FF; }
+
     .social-links a:hover {
       transform: translateY(-3px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
-    /* Mobile: icon-only social buttons */
     @media (max-width: 500px) {
       .social-links a span { display: none; }
-      .social-links a {
-        width: 44px;
-        height: 44px;
-        justify-content: center;
-        padding: 0;
-        border-radius: 50%;
-        font-size: 1.2em;
-      }
-      /* Center SVG inside Bluesky button */
-      .social-links a.bluesky img {
-        display: block;
-        margin: 0 auto;
-        width: 24px;
-        height: 24px;
-      }
+      .social-links a { width: 44px; height: 44px; justify-content: center; padding: 0; border-radius: 50%; font-size: 1.2em; }
+      .social-links a.bluesky img { display: block; margin: 0 auto; width: 24px; height: 24px; }
     }
   </style>
 </head>
@@ -243,18 +249,27 @@
   <!-- Hero Divider / Spacer -->
   <div class="hero-divider"></div>
 
-<!-- Product Section -->
-<section class="product-hero">
-  <h1>Limited Sticker Release – Only 100 Available!</h1>
-  <p>Every sticker you buy is an entry to win 1 of 10 Funko Pops.</p>
-  <a href="zhh.html">
-    <img src="zombie_hogan.png" alt="Sticker Design" style="cursor: pointer;">
-  </a>
-  <div class="product-cta">
-    <a href="zhh.html">Buy Sticker</a>
-  </div>
-</section>
+  <!-- Product Section -->
+  <section class="product-hero">
+    <h1>Limited Sticker Release – Only 100 Available!</h1>
+    <p>Every sticker you buy is an entry to win 1 of 10 Funko Pops!</p>
 
+    <div style="position: relative; display: inline-block;">
+      <a href="zhh.html">
+        <img src="zombie_hogan.png" alt="Sticker Design" style="cursor: pointer;">
+      </a>
+      <div class="badge" style="top:10px; right:10px; background:#ffcc00; color:#ff3300; font-size:1em;">
+        Only 100 Left!
+      </div>
+      <div class="badge" style="top:10px; left:10px; background:#33ccff; color:white; font-size:1em;">
+        Win a Funko Pop!
+      </div>
+    </div>
+
+    <div class="product-cta">
+      <a href="zhh.html">Buy Sticker</a>
+    </div>
+  </section>
 
   <!-- Section Divider -->
   <div class="section-divider"></div>
