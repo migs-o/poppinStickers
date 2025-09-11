@@ -19,12 +19,13 @@
     }
 
     header {
-      background: #ffe680 url('brand.png') center center no-repeat;
-      background-size: contain;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: linear-gradient(45deg, #ffcc00, #ff6600);
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      height: 80px;
+      object-fit: contain;
     }
 
     h2 {
@@ -108,8 +109,10 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header></header>
+  <!-- Header with Brand Logo -->
+  <header>
+    <img src="brand.png" alt="Get Poppables Logo">
+  </header>
 
   <main>
     <section class="product">
