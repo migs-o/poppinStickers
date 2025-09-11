@@ -22,22 +22,24 @@
     }
 
     /* Main Hero (Branding) */
-    header {
-      background: #ffe680 url('brand.png') center center no-repeat;
-      background-size: contain;
-      height: 500px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-    }
-    @media (max-width: 600px) {
-      header {
-        height: 300px;
-      }
-    }
+header {
+  background: #ffe680 url('brand.png') center center no-repeat;
+  background-size: contain;
+  height: 330px; /* ~2/3 of original 500px */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  header {
+    height: 200px; /* ~2/3 of original 300px mobile height */
+  }
+}
+
 
     /* Hero Divider / Spacer */
     .hero-divider, .section-divider {
