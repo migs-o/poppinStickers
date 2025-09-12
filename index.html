@@ -531,18 +531,14 @@
       e.preventDefault();
 
       try {
+        // Note: full path for Vercel serverless function
         const response = await fetch('/api/create-checkout-session', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            priceId: 'price_1S636zBbUM12DkfZhhQWsnB1' // 👈 replace with your premium sticker Price ID
-          })
         });
 
         const data = await response.json();
-
         if (data.url) {
-          window.location.href = data.url;
+          window.location.href = data.url; // redirect to Stripe Checkout
         } else {
           alert('Something went wrong. Please try again.');
           console.error(data);
@@ -553,6 +549,7 @@
       }
     });
   </script>
+
 
 </body>
 
