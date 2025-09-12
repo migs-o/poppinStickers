@@ -1,13 +1,14 @@
 {
   "name": "poppinstickers",
   "version": "1.0.0",
-  "description": "",
+  "description": "Poppables sticker store with Stripe checkout",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["stickers", "stripe", "funko", "poppables"],
+  "author": "Michael Ortiz",
   "license": "ISC",
   "dependencies": {
     "stripe": "^18.5.0"
