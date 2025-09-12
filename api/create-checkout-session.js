@@ -12,13 +12,13 @@ export default async function handler(req, res) {
       payment_method_types: ["card"],
       line_items: [
         {
-          price: "price_ABC123XYZ", // 👈 replace with your real Price ID
+          price: "price_1S636zBbUM12DkfZhhQWsnB1", // 👈 replace with your real Price ID
           quantity: 1,
         },
       ],
       mode: "payment",
-      success_url: "https://yourdomain.com/success",
-      cancel_url: "https://yourdomain.com/cancel",
+      success_url: "https://poppin-stickers.vercel.app/success",
+      cancel_url: "https://poppin-stickers.vercel.app/cancel",
     });
 
     res.status(200).json({ url: session.url });
