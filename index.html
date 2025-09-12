@@ -523,22 +523,26 @@
   </script>
 
   <!-- Stripe Checkout Script -->
-  <script src="https://js.stripe.com/v3/"></script>
   <script>
     const buyBtn = document.getElementById('buyStickerBtn');
 
     buyBtn.addEventListener('click', async (e) => {
       e.preventDefault();
 
+      // Dynamically determine the base URL
+      const baseUrl =
+        window.location.hostname === 'localhost'
+          ? 'http://localhost:3000'
+          : window.location.origin;
+
       try {
-        // Note: full path for Vercel serverless function
-        const response = await fetch('/api/create-checkout-session', {
+        const response = await fetch(`${baseUrl}/api/create-checkout-session`, {
           method: 'POST',
         });
 
         const data = await response.json();
         if (data.url) {
-          window.location.href = data.url; // redirect to Stripe Checkout
+          window.location.href = data.url;
         } else {
           alert('Something went wrong. Please try again.');
           console.error(data);
@@ -549,6 +553,8 @@
       }
     });
   </script>
+
+
 
 
 </body>
