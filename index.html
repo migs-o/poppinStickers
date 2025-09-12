@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sticker Release + Funko Pop Giveaway</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
 
   <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -34,16 +36,29 @@
       position: relative;
     }
 
-    @media (max-width: 600px) { header { height: 200px; } }
+    @media (max-width: 600px) {
+      header {
+        height: 200px;
+      }
+    }
 
     /* Hero Divider / Spacer */
-    .hero-divider, .section-divider {
+    .hero-divider,
+    .section-divider {
       width: 100%;
       background: linear-gradient(to right, #ffcc00, #ff9900);
       clip-path: polygon(0 0, 100% 100%, 100% 0, 0 0);
     }
-    .hero-divider { height: 60px; margin: 40px 0; }
-    .section-divider { height: 50px; margin-bottom: 30px; }
+
+    .hero-divider {
+      height: 60px;
+      margin: 40px 0;
+    }
+
+    .section-divider {
+      height: 50px;
+      margin-bottom: 30px;
+    }
 
     /* Product Section */
     .product-hero {
@@ -51,6 +66,7 @@
       margin: 40px auto;
       position: relative;
     }
+
     .product-hero h1 {
       font-family: 'Bangers', cursive;
       font-size: 2.8em;
@@ -58,41 +74,59 @@
       margin-bottom: 15px;
       animation: pulseColor 2s infinite;
     }
+
     @keyframes pulseColor {
-      0%, 100% { color: #ff6600; }
-      50% { color: #ff3300; }
+
+      0%,
+      100% {
+        color: #ff6600;
+      }
+
+      50% {
+        color: #ff3300;
+      }
     }
-    .product-hero p { font-size: 1.2em; color: #333; margin-bottom: 20px; }
+
+    .product-hero p {
+      font-size: 1.2em;
+      color: #333;
+      margin-bottom: 20px;
+    }
 
     .product-hero img {
       max-width: 300px;
       width: 100%;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .product-hero img:hover {
       transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
     }
 
     /* CTA Button */
-    .product-cta { margin-top: 20px; }
+    .product-cta {
+      margin-top: 20px;
+    }
+
     .product-cta a {
       padding: 18px 40px;
       font-size: 1.4em;
       border-radius: 10px;
-      background: linear-gradient(45deg, #ff6600,#ff3300);
+      background: linear-gradient(45deg, #ff6600, #ff3300);
       color: white;
       text-decoration: none;
-      box-shadow: 0 6px 20px rgba(255,102,0,0.5);
+      box-shadow: 0 6px 20px rgba(255, 102, 0, 0.5);
       transition: all 0.3s ease-in-out;
       display: inline-block;
     }
+
     .product-cta a:hover {
       transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 10px 25px rgba(255,102,0,0.7);
+      box-shadow: 0 10px 25px rgba(255, 102, 0, 0.7);
     }
 
     /* Badges Above Image */
@@ -100,13 +134,21 @@
       padding: 8px 15px;
       border-radius: 50px;
       font-weight: bold;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
       animation: bounceBadge 1.5s infinite;
       display: inline-block;
     }
+
     @keyframes bounceBadge {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-4px);
+      }
     }
 
     /* Giveaway Prize */
@@ -115,21 +157,26 @@
       background-color: #fff8e6;
       padding: 30px 20px;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       text-align: center;
       margin-bottom: 30px;
     }
+
     .prize img {
       max-width: 90%;
       max-height: 500px;
       width: auto;
       height: auto;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       object-fit: contain;
       transition: transform 0.3s ease;
     }
-    .prize img:hover { transform: scale(1.05); }
+
+    .prize img:hover {
+      transform: scale(1.05);
+    }
+
     .prize .badge {
       position: absolute;
       top: 10px;
@@ -140,13 +187,25 @@
       border-radius: 50px;
       font-weight: bold;
       font-size: 0.9em;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
       animation: bounce 2s infinite;
     }
-    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
 
     /* Countdown & Sticker Counter */
-    .counter, .countdown {
+    .counter,
+    .countdown {
       display: block;
       max-width: 300px;
       margin: 10px auto;
@@ -159,7 +218,20 @@
       animation: pulse 1.5s infinite;
       font-size: 1.2em;
     }
-    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
 
     /* Sections */
     section {
@@ -167,6 +239,7 @@
       margin: 40px auto;
       padding: 0 20px;
     }
+
     h2 {
       text-align: center;
       margin-bottom: 20px;
@@ -174,32 +247,119 @@
       font-size: 2em;
       color: #ff6600;
     }
-    ul { list-style: none; padding: 0; }
-    ul li { margin-bottom: 10px; font-size: 1.1em; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
 
     /* Regular Stickers Section */
     .regular-stickers div.sticker-card img:hover {
       transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
     }
-    @media (max-width: 700px) { .regular-stickers div.sticker-card { max-width: 45%; margin-bottom: 20px; } }
-    @media (max-width: 450px) { .regular-stickers div.sticker-card { max-width: 90%; margin-bottom: 20px; } }
+
+    @media (max-width: 700px) {
+      .regular-stickers div.sticker-card {
+        max-width: 45%;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .regular-stickers div.sticker-card {
+        max-width: 90%;
+        margin-bottom: 20px;
+      }
+    }
 
     /* Footer */
-    footer { text-align: center; padding: 25px; background-color: #333; color: white; }
-    footer a { color: #ffcc00; font-weight: bold; text-decoration: none; transition: color 0.3s ease, text-shadow 0.3s ease; }
-    footer a:hover { color: #ffffff; text-shadow: 0 0 6px #ffcc00; }
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #333;
+      color: white;
+    }
+
+    footer a {
+      color: #ffcc00;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 6px #ffcc00;
+    }
 
     /* Social Links */
-    .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
-    .social-links a { display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 20px; font-weight: bold; text-decoration: none; color: #fff; transition: transform 0.2s ease, box-shadow 0.3s ease; font-size: 1em; }
-    .social-links a.twitter { background: #1DA1F2; }
-    .social-links a.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-    .social-links a.bluesky { background: #0095FF; }
-    .social-links a:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-    @media (max-width: 500px) { .social-links a span { display: none; } .social-links a { width: 44px; height: 44px; justify-content: center; padding: 0; border-radius: 50%; font-size: 1.2em; } .social-links a.bluesky img { display: block; margin: 0 auto; width: 24px; height: 24px; } }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      font-size: 1em;
+    }
+
+    .social-links a.twitter {
+      background: #1DA1F2;
+    }
+
+    .social-links a.instagram {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+
+    .social-links a.bluesky {
+      background: #0095FF;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 500px) {
+      .social-links a span {
+        display: none;
+      }
+
+      .social-links a {
+        width: 44px;
+        height: 44px;
+        justify-content: center;
+        padding: 0;
+        border-radius: 50%;
+        font-size: 1.2em;
+      }
+
+      .social-links a.bluesky img {
+        display: block;
+        margin: 0 auto;
+        width: 24px;
+        height: 24px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <!-- Main Branding Hero -->
@@ -227,28 +387,38 @@
   <!-- Regular Stickers Section -->
   <section class="regular-stickers">
     <h2>Collect the Undead Wrestlers - Series 1</h2>
-    <p style="text-align:center; font-size:1.2em; margin-bottom:30px;">Each sticker is part of the limited Series 1. Don’t miss your favorites!</p>
+    <p style="text-align:center; font-size:1.2em; margin-bottom:30px;">Each sticker is part of the limited Series 1.
+      Don’t miss your favorites!</p>
     <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:25px;">
-      
+
       <div class="sticker-card" style="text-align:center; max-width:200px;">
-        <img src="zombie_giant.png" alt="Zombie Andre" style="width:100%; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.25);">
+        <img src="zombie_giant.png" alt="Zombie Andre"
+          style="width:100%; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.25);">
         <h3 style="margin:10px 0 5px; color:#ff6600;">Zombie Giant</h3>
         <p style="margin:0 0 10px; font-weight:bold;">$5</p>
-        <a href="andre.html" style="display:inline-block; padding:12px 25px; background:linear-gradient(45deg, #ff6600,#ff3300); color:white; text-decoration:none; border-radius:10px;">Buy Now</a>
+        <a href="andre.html"
+          style="display:inline-block; padding:12px 25px; background:linear-gradient(45deg, #ff6600,#ff3300); color:white; text-decoration:none; border-radius:10px;">Buy
+          Now</a>
       </div>
 
       <div class="sticker-card" style="text-align:center; max-width:200px;">
-        <img src="zombie_king.png" alt="Zombie Macho King" style="width:100%; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.25);">
+        <img src="zombie_king.png" alt="Zombie Macho King"
+          style="width:100%; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.25);">
         <h3 style="margin:10px 0 5px; color:#ff6600;">Zombie King</h3>
         <p style="margin:0 0 10px; font-weight:bold;">$5</p>
-        <a href="macho.html" style="display:inline-block; padding:12px 25px; background:linear-gradient(45deg, #ff6600,#ff3300); color:white; text-decoration:none; border-radius:10px;">Buy Now</a>
+        <a href="macho.html"
+          style="display:inline-block; padding:12px 25px; background:linear-gradient(45deg, #ff6600,#ff3300); color:white; text-decoration:none; border-radius:10px;">Buy
+          Now</a>
       </div>
 
       <div class="sticker-card" style="text-align:center; max-width:200px;">
-        <img src="zombie_scot.png" alt="Zombie Roddy Piper" style="width:100%; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.25);">
+        <img src="zombie_scot.png" alt="Zombie Roddy Piper"
+          style="width:100%; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.25);">
         <h3 style="margin:10px 0 5px; color:#ff6600;">Zombie Scotsman</h3>
         <p style="margin:0 0 10px; font-weight:bold;">$5</p>
-        <a href="roddy.html" style="display:inline-block; padding:12px 25px; background:linear-gradient(45deg, #ff6600,#ff3300); color:white; text-decoration:none; border-radius:10px;">Buy Now</a>
+        <a href="roddy.html"
+          style="display:inline-block; padding:12px 25px; background:linear-gradient(45deg, #ff6600,#ff3300); color:white; text-decoration:none; border-radius:10px;">Buy
+          Now</a>
       </div>
 
     </div>
@@ -294,8 +464,10 @@
       <li>10 winners will be randomly selected after the giveaway ends.</li>
       <li>All winners will be contacted via email.</li>
     </ul>
-    <p style="font-size:1em; color:#ff6600; font-weight:bold; text-align:center; margin-top:15px; background:#fff8e6; padding:10px 15px; border-radius:8px; border:1px solid #ffcc00;">
-      No purchase necessary to enter or win. See <a href="rules.html" style="color:#ff3300; text-decoration:underline;">Official Rules</a> for free entry method and full terms.
+    <p
+      style="font-size:1em; color:#ff6600; font-weight:bold; text-align:center; margin-top:15px; background:#fff8e6; padding:10px 15px; border-radius:8px; border:1px solid #ffcc00;">
+      No purchase necessary to enter or win. See <a href="rules.html"
+        style="color:#ff3300; text-decoration:underline;">Official Rules</a> for free entry method and full terms.
     </p>
   </section>
 
@@ -304,10 +476,13 @@
     <h2>Follow Us!</h2>
     <p>Be the first to know about Future Drops.</p>
     <div class="social-links">
-      <a class="twitter" href="https://x.com/getpoppables" target="_blank"><i class="fab fa-twitter"></i> <span>Twitter</span></a>
-      <a class="instagram" href="https://www.instagram.com/getpoppables" target="_blank"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
+      <a class="twitter" href="https://x.com/getpoppables" target="_blank"><i class="fab fa-twitter"></i>
+        <span>Twitter</span></a>
+      <a class="instagram" href="https://www.instagram.com/getpoppables" target="_blank"><i
+          class="fab fa-instagram"></i> <span>Instagram</span></a>
       <a class="bluesky" href="https://bsky.app/profile/getpoppables.bsky.social" target="_blank">
-        <img src="bluesky_logo.png" alt="Bluesky" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;"><span>Bluesky</span>
+        <img src="bluesky_logo.png" alt="Bluesky"
+          style="width:20px; height:20px; vertical-align:middle; margin-right:8px;"><span>Bluesky</span>
       </a>
     </div>
   </section>
@@ -316,7 +491,8 @@
   <footer>
     <p>Contact: <a href="mailto:hello@getpoppables">hello@getpoppables.com</a></p>
     <p><a href="terms.html">Terms of Service & Policies</a> | <a href="rules.html">Giveaway Rules</a></p>
-    <p class="disclaimer">Poppables stickers are original parody artworks and are not affiliated with or endorsed by Funko or any other brand.</p>
+    <p class="disclaimer">Poppables stickers are original parody artworks and are not affiliated with or endorsed by
+      Funko or any other brand.</p>
     <p class="copyright">© 2025 Poppables. All rights reserved. Unauthorized reproduction or use is prohibited.</p>
   </footer>
 
@@ -329,10 +505,10 @@
       const now = new Date().getTime();
       const distance = giveawayEnd - now;
       if (distance < 0) { countdownElem.innerHTML = "Giveaway Ended!"; clearInterval(countdownInterval); return; }
-      const days = Math.floor(distance / (1000*60*60*24));
-      const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-      const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-      const seconds = Math.floor((distance % (1000*60)) / 1000);
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
       countdownElem.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
     const countdownInterval = setInterval(updateCountdown, 1000);
@@ -346,32 +522,39 @@
     }
   </script>
 
-<!-- Stripe Checkout Script -->
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-  const buyBtn = document.getElementById('buyStickerBtn');
+  <!-- Stripe Checkout Script -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const buyBtn = document.getElementById('buyStickerBtn');
 
-  buyBtn.addEventListener('click', async (e) => {
-    e.preventDefault(); // prevent default link action
+    buyBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
 
-    try {
-      const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-      });
+      try {
+        const response = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            priceId: 'price_1S636zBbUM12DkfZhhQWsnB1' // 👈 replace with your premium sticker Price ID
+          })
+        });
 
-      const data = await response.json();
-      if (data.url) {
-        window.location.href = data.url; // redirect to Stripe Checkout
-      } else {
+        const data = await response.json();
+
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          alert('Something went wrong. Please try again.');
+          console.error(data);
+        }
+      } catch (err) {
         alert('Something went wrong. Please try again.');
-        console.error(data);
+        console.error(err);
       }
-    } catch (err) {
-      alert('Something went wrong. Please try again.');
-      console.error(err);
-    }
-  });
-</script>
+    });
+  </script>
+
 
 </body>
+
 </html>
