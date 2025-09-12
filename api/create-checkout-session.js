@@ -25,6 +25,7 @@ export default async function handler(req, res) {
       success_url: "https://poppin-stickers.vercel.app/success",
       cancel_url: "https://poppin-stickers.vercel.app/cancel",
     });
+    
 
     res.status(200).json({ url: session.url });
   } catch (err) {
