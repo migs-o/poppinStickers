@@ -219,7 +219,7 @@
 
     <a href="zhh.html"><img src="zombie_hogan.png" alt="Sticker Design" style="cursor:pointer;"></a>
 
-    <div class="product-cta"><a href="zhh.html">Buy Sticker</a></div>
+    <div class="product-cta"><a href="#" id="buyStickerBtn">Buy Sticker</a></div>
   </section>
 
   <div class="section-divider"></div>
@@ -345,6 +345,33 @@
       if (stickersRemaining > 0) { stickersRemaining--; stickersElem.innerText = stickersRemaining; }
     }
   </script>
+
+<!-- Stripe Checkout Script -->
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  const buyBtn = document.getElementById('buyStickerBtn');
+
+  buyBtn.addEventListener('click', async (e) => {
+    e.preventDefault(); // prevent default link action
+
+    try {
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+      });
+
+      const data = await response.json();
+      if (data.url) {
+        window.location.href = data.url; // redirect to Stripe Checkout
+      } else {
+        alert('Something went wrong. Please try again.');
+        console.error(data);
+      }
+    } catch (err) {
+      alert('Something went wrong. Please try again.');
+      console.error(err);
+    }
+  });
+</script>
 
 </body>
 </html>
