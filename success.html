@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +9,71 @@
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    main { max-width: 500px; margin: 40px auto; background: white; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); padding: 40px 30px; text-align: center; }
+    h1 { font-size: 2em; margin-bottom: 20px; }
+    .order-summary { text-align: left; margin: 20px 0; background: #e6ffe6; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .order-summary h2 { font-size: 1.3em; margin-bottom: 12px; }
+    .order-summary ul { padding-left: 20px; }
+    .order-summary li { margin-bottom: 8px; }
+    .button { display: inline-block; margin-top: 20px; padding: 12px 28px; font-size: 1.1em; border-radius: 12px; background: #28a745; color: white; text-decoration: none; transition: transform 0.2s ease; }
+    .button:hover { transform: translateY(-2px) scale(1.03); }
+  </style>
 </head>
 <body>
+
   <header style="background: #ffe680 url('brand.png') center center no-repeat; background-size: contain; height: 200px; display: flex; justify-content: center; align-items: center;">
   </header>
+
   <div class="hero-divider"></div>
-  <main style="max-width: 500px; margin: 40px auto; background: white; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 40px 30px; text-align: center;">
-    <h1><i class="fa-solid fa-face-laugh-beam"></i> Thank you!</h1>
+
+  <main>
+    <h1><i class="fa-solid fa-face-laugh-beam"></i> Thank You!</h1>
     <p>Your sticker purchase was <strong>successful</strong>.<br>We appreciate your support!</p>
-    <a href="/" class="button"><i class="fa fa-arrow-left"></i> Back to Home</a>
+
+    <div class="order-summary" id="orderSummary">
+      <h2>Order Summary</h2>
+      <p>Loading...</p>
+    </div>
+
+    <a href="/" class="button"><i class="fa fa-arrow-left"></i> Back to Stickers</a>
   </main>
+
   <footer>
     &copy; 2025 Poppin Stickers. <a href="/terms.html">Terms</a> | <a href="/rules.html">Rules</a>
   </footer>
+
+  <script>
+    // Get session_id from URL
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get("session_id");
+    const summaryElem = document.getElementById("orderSummary");
+
+    if (!sessionId) {
+      summaryElem.innerHTML = "<p>No order info available.</p>";
+    } else {
+      fetch(`/api/checkout-session?session_id=${sessionId}`)
+        .then(res => res.json())
+        .then(session => {
+          if (session && session.line_items && session.line_items.data.length > 0) {
+            const items = session.line_items.data;
+            let html = "<ul>";
+            items.forEach(item => {
+              html += `<li>${item.quantity} × ${item.price.product.name} — $${(item.price.unit_amount / 100).toFixed(2)}</li>`;
+            });
+            html += "</ul>";
+            html += `<p><strong>Total:</strong> $${(session.amount_total / 100).toFixed(2)}</p>`;
+            summaryElem.innerHTML = html;
+          } else {
+            summaryElem.innerHTML = "<p>No order info available.</p>";
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          summaryElem.innerHTML = "<p>Failed to load order details.</p>";
+        });
+    }
+  </script>
+
 </body>
 </html>
