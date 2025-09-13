@@ -22,8 +22,8 @@ export default async function handler(req, res) {
         { price: "price_1S636zBbUM12DkfZhhQWsnB1", quantity: 1 } // replace with your price ID
       ],
       mode: "payment",
-      success_url: "https://www.getpoppables.com/success", // 👈 Replace with your success URL
-      cancel_url: "https://www.getpoppables.com/cancel",   // 👈 Replace with your cancel URL
+      success_url: "https://www.getpoppables.com/success.html", // 👈 Replace with your success URL
+      cancel_url: "https://www.getpoppables.com/cancel.html",   // 👈 Replace with your cancel URL
     });
 
     res.status(200).json({ url: session.url });
