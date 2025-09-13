@@ -52,7 +52,7 @@
     if (!sessionId) {
       summaryElem.innerHTML = "<p>No order info available.</p>";
     } else {
-      fetch(`/api/checkout-session?session_id=${sessionId}`)
+      fetch(`/api/create-checkout-session?session_id=${sessionId}`)
         .then(res => res.json())
         .then(session => {
           if (session && session.line_items && session.line_items.data.length > 0) {
