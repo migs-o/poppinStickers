@@ -34,13 +34,17 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
       const session = await stripe.checkout.sessions.create({
+        payment_method_types: ["card"], // Only card (Apple Pay / Google Pay included automatically)
+        billing_address_collection: "required", // Collect billing address
+        shipping_address_collection: {       // Collect shipping address
+          allowed_countries: ["US", "CA"],   // Adjust for countries you ship to
+        },
         line_items: [
           { price: "price_1S636zBbUM12DkfZhhQWsnB1", quantity: 1 } // Stripe price ID
         ],
         mode: "payment",
         success_url: "https://www.getpoppables.com/success.html?session_id={CHECKOUT_SESSION_ID}",
-        cancel_url: "https://www.getpoppables.com/cancel.html?session_id={CHECKOUT_SESSION_ID}"
-        // Notice: no payment_method_types or shipping settings — dashboard defaults apply
+        cancel_url: "https://www.getpoppables.com/cancel.html?session_id={CHECKOUT_SESSION_ID}",
       });
 
       return res.status(200).json({ url: session.url });
