@@ -22,8 +22,8 @@ export default async function handler(req, res) {
         },
       ],
       mode: "payment",
-      success_url: "https://poppin-stickers.vercel.app/success", // 👈 Replace with your success URL
-      cancel_url: "https://poppin-stickers.vercel.app/cancel",   // 👈 Replace with your cancel URL
+      success_url: "https://getpoppables.com/success", // 👈 Replace with your success URL
+      cancel_url: "https://getpoppables.com/cancel",   // 👈 Replace with your cancel URL
     });
 
     // Return the URL of the checkout session
