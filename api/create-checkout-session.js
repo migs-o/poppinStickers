@@ -1,35 +1,34 @@
 import Stripe from "stripe";
-
-// Initialize Stripe with your secret key from Vercel Environment Variables
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
+  // Allow CORS
+  res.setHeader("Access-Control-Allow-Origin", "*"); // or your specific domain
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  if (req.method === "OPTIONS") {
+    return res.status(200).end(); // handle preflight
+  }
+
   if (req.method !== "POST") {
-    return res.status(405).send("Method not allowed");
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
-    // Hardcoded Price ID for your premium sticker
-    const priceId = "price_1S636zBbUM12DkfZhhQWsnB1"; // 👈 Replace with your real Price ID
-
-    // Create a Stripe Checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: [
-        {
-          price: priceId,
-          quantity: 1,
-        },
+        { price: "price_1S636zBbUM12DkfZhhQWsnB1", quantity: 1 } // replace with your price ID
       ],
       mode: "payment",
-      success_url: "https://getpoppables.com/success", // 👈 Replace with your success URL
-      cancel_url: "https://getpoppables.com/cancel",   // 👈 Replace with your cancel URL
+      success_url: "https://poppin-stickers.vercel.app/success", // 👈 Replace with your success URL
+      cancel_url: "https://poppin-stickers.vercel.app/cancel",   // 👈 Replace with your cancel URL
     });
 
-    // Return the URL of the checkout session
     res.status(200).json({ url: session.url });
   } catch (err) {
-    console.error("Stripe Checkout Error:", err);
+    console.error(err);
     res.status(500).json({ error: "Something went wrong creating the checkout session" });
   }
 }
